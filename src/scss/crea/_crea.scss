@@ -1,0 +1,14 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.seccion {
+  &__creaGrid {
+    @include mixins.desktop {
+      @include mixins.grid(2, 2rem);
+      align-items: center;
+    }
+  }
+  h2 {
+    @include mixins.headingColor(variables.$secundario, variables.$primario);
+  }
+}

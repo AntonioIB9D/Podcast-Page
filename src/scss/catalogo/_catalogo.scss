@@ -1,0 +1,95 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.planes {
+  padding: 3rem 0;
+  background-color: variables.$secundario;
+
+  &__heading {
+    @include mixins.headingColor(variables.$blanco, variables.$primario);
+  }
+
+  @include mixins.desktop {
+    padding: 8rem 0;
+  }
+
+  &__descripcion {
+    color: variables.$blanco;
+  }
+}
+
+.catalogo {
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$blanco;
+  @include mixins.desktop {
+    flex-direction: row;
+    max-width: 80rem;
+    /* margin: 10rem auto 0 auto; */
+    margin-inline: auto;
+    /*margin-inline: margen a los lados */
+    margin-block-start: 10rem;
+    /*margin-block: margin arriba y abajo */
+    /*margin-block-start: margin arriba */
+  }
+
+  &__inicio {
+    flex-grow: 1;
+    padding: 16rem 4rem 4rem 4rem;
+    border-bottom: 1px solid #e1e1e1;
+    @include mixins.iconoBg('/build/img/icono_inicio.svg');
+    @include mixins.desktop {
+      border-bottom: none;
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__negocio {
+    flex-grow: 1;
+    padding: 21rem 4rem 4rem 4rem;
+    background-color: variables.$primario;
+    border-bottom: 1px solid #e1e1e1;
+    @include mixins.iconoBg('/build/img/icono_negocio.svg');
+    order: -1;
+    @include mixins.desktop {
+      order: unset;
+      margin-block: -5rem;
+      border-radius: 2rem;
+      background-position: 50% 7rem;
+      transition: transform 0.3s;
+      z-index: 1;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__pro {
+    flex-grow: 1;
+    padding: 16rem 4rem 4rem 4rem;
+    @include mixins.iconoBg('/build/img/icono_pro.svg');
+    @include mixins.desktop {
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__precio {
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &__listado {
+    text-align: center;
+  }
+
+  li {
+    margin-bottom: 2rem;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

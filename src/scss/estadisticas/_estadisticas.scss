@@ -1,0 +1,12 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.estadisticas {
+  padding: 3rem 0;
+  @include mixins.desktop {
+    padding: 8rem 0;
+  }
+  &-heading {
+    @include mixins.headingColor(variables.$secundario, variables.$primario);
+  }
+}

@@ -1,0 +1,13 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.boton__primario {
+  @include mixins.boton(variables.$primario, variables.$secundario);
+}
+
+.catalogo__boton {
+  @include mixins.boton(variables.$primario, variables.$secundario);
+  border: 2px solid variables.$blanco;
+  margin-top: 2rem;
+  display: block;
+}

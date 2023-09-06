@@ -1,0 +1,34 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.header {
+  @include mixins.bgImage(
+    '../../../build/img/header.webp',
+    variables.$secundarioOpacity
+  );
+  padding: 5rem 0;
+
+  &__logo {
+    max-width: 20rem;
+    margin: 0 auto;
+    @include mixins.desktop {
+      margin: 0;
+    }
+  }
+
+  &__contenido {
+    padding: 10rem 0;
+    @include mixins.desktop {
+      padding: 15rem 0;
+    }
+  }
+
+  &__texto {
+    color: variables.$blanco;
+    font-size: 4.5rem;
+    @include mixins.desktop {
+      font-size: 6rem;
+      max-width: 40%;
+    }
+  }
+}

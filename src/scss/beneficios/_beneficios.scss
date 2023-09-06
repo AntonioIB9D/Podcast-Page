@@ -1,0 +1,32 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.beneficios {
+  background-color: variables.$primario;
+  padding: 3rem 0;
+  @include mixins.desktop {
+    padding: 8rem 0;
+  }
+  &__grid {
+    @include mixins.desktop {
+      @include mixins.grid(5, 4rem);
+      align-items: center;
+    }
+  }
+
+  &__contenido {
+    grid-column: 1/4;
+  }
+
+  &__heading {
+    @include mixins.headingColor(variables.$secundario, variables.$blanco);
+  }
+
+  &__imagen {
+    grid-column: 4/6;
+    transition: transform 0.3s;
+    &:hover {
+      transform: rotate(8deg) scale(1.1);
+    }
+  }
+}
